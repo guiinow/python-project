@@ -1,2 +1,2 @@
 # python-project
-This repository contains a small geme developed with Python
+This repository contains a small game developed with Python
