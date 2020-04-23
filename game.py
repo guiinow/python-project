@@ -10,23 +10,18 @@ print("Let's game \n")
 
 user_guess = int(input("So wich number do you have in mind? "))
 
-for i in range(4):
+for i in range(1, 6):
+
     if (user_guess == random_value):
-        print(user_name," Congrats, you've won!")
+        print(user_name, "congrats, you've won!")
         break
     elif (user_guess > random_value):
-
         print("Sorry, I though of a number a little bit smaller")
-        if (i <= 4):
-            print("Attempts left: ", i)
-            user_guess = int(input("Try again "))
-        else:
-            break
-
+        print("Attempts made: ", i)
+        if (i <=5 ):
+            user_guess = int(input("Try again: "))
     else:
         print("Sorry, I though of a number a little bit bigger")
-        if (i <= 4):
-            print("Attempts left: ", i)
-            user_guess = int(input("Try again "))
-        else:
-            break
+        print("Attempts made: ", i)
+        if (i <=5 ):
+            user_guess = int(input("Try again: "))
