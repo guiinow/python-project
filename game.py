@@ -8,20 +8,25 @@ print(user_name, " this is how it's gonna work:")
 print("You will have 5 chances to guess the secret number that I am thinking of in a range between 1 and 50, got it?")
 print("Let's game \n")
 
-user_guess = int(input("So wich number do you have in mind? "))
+user_attempts = 4
 
-for i in range(1, 6):
+for i in range(5):
+    user_guess = int(input("So wich number do you have in mind? "))
 
-    if (user_guess == random_value):
+    won = (user_guess == random_value)
+    guessBigger = (user_guess > random_value)
+
+    if (won):
         print(user_name, "congrats, you've won!")
         break
-    elif (user_guess > random_value):
+    elif (guessBigger):
         print("Sorry, I though of a number a little bit smaller")
-        print("Attempts made: ", i)
-        if (i <=5 ):
-            user_guess = int(input("Try again: "))
     else:
         print("Sorry, I though of a number a little bit bigger")
-        print("Attempts made: ", i)
-        if (i <=5 ):
-            user_guess = int(input("Try again: "))
+
+    if (user_attempts == 0):
+        print("Unfortunately you ran out of chances, the correct answer was: ", random_value)
+        break
+    
+    print("Attempts left: ", user_attempts)
+    user_attempts-=1
