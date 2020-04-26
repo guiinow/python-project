@@ -1,7 +1,9 @@
 from random import randint
 
 random_value = randint(1, 50)
-print(random_value)
+
+#DevOption below: display the secret number so you can try the code knowing the answer 
+#print(random_value)
 
 user_name = input("Hey there, my name is Boot, what is yours? ")
 print(user_name, " this is how it's gonna work:")
